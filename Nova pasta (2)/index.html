@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>python com ajax</title>
+	<script src="jquery-3.6.0.min.js"></script>
+	<script>
+		function myfun()
+		{
+			$.ajax({
+				url: "http://localhost:8080/cgi-bin/main.py",
+				type: "post",
+				datatype: "html",
+				data: { var1: "foo", var2: "foo" },
+				success: function(response){
+					$("#div").html(response);
+					console.log("ok");
+				}
+
+			});
+		};
+	</script>
+</head>
+
+<body>
+	<div id="div"><TEXTO/div>
+
+</body>
+</html>
